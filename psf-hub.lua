@@ -1,9 +1,8 @@
 local Players = game:GetService("Players")
-
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- Создаем GUI
+-- гуишка на рекламу мани мани
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "SubscribeScreen"
 screenGui.IgnoreGuiInset = true
@@ -19,7 +18,8 @@ local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(1, 0, 0.2, 0)
 textLabel.Position = UDim2.new(0, 0, 0.4, 0)
 textLabel.BackgroundTransparency = 1
-textLabel.Text = "pls subscribe to t.me/psfhub!loading... "
+textLabel.Text = "pls subscribe to t.me/psfhub!
+loading... "
 textLabel.TextColor3 = Color3.new(1, 1, 1)
 textLabel.TextScaled = true
 textLabel.Font = Enum.Font.GothamBold
@@ -27,8 +27,8 @@ textLabel.Parent = screenGui
 
 screenGui.Parent = playerGui
 
--- Ждем 3 секунды и удаляем
-wait(3)
+--посхалко ыы 1489
+wait(4)
 screenGui:Destroy()
 -- PSF Hub for Executors
 local Players = game:GetService("Players")
@@ -69,7 +69,7 @@ local VisualsSettings = {
     }
 }
 
--- Настройки LocalPlayer
+-- Настройки локала
 local LocalPlayerSettings = {
     Fly = {
         Enabled = false,
@@ -81,7 +81,7 @@ local LocalPlayerSettings = {
     }
 }
 
--- Настройки Utilities
+-- Настройки утилитес
 local UtilitiesSettings = {
     JumpBooster = {
         Enabled = false,
@@ -92,7 +92,7 @@ local UtilitiesSettings = {
     }
 }
 
--- Переменные для Fly
+-- Переменные для летайки
 local flying = false
 local flyConnection
 local bodyVelocity
