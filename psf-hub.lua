@@ -1,4 +1,36 @@
- -- PSF Hub for Executors
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Создаем GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "SubscribeScreen"
+screenGui.IgnoreGuiInset = true
+screenGui.ResetOnSpawn = false
+
+local background = Instance.new("Frame")
+background.Size = UDim2.new(1, 0, 1, 0)
+background.BackgroundColor3 = Color3.new(0, 0, 0)
+background.BorderSizePixel = 0
+background.Parent = screenGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 0.2, 0)
+textLabel.Position = UDim2.new(0, 0, 0.4, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "pls subscribe to t.me/psfhub!loading... "
+textLabel.TextColor3 = Color3.new(1, 1, 1)
+textLabel.TextScaled = true
+textLabel.Font = Enum.Font.GothamBold
+textLabel.Parent = screenGui
+
+screenGui.Parent = playerGui
+
+-- Ждем 3 секунды и удаляем
+wait(3)
+screenGui:Destroy()
+-- PSF Hub for Executors
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
