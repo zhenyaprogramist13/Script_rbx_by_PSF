@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- гуишка на рекламу мани мани
+-- гуишка на загруску мани мани
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "SubscribeScreen"
 screenGui.IgnoreGuiInset = true
@@ -17,8 +17,8 @@ background.Parent = screenGui
 local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(1, 0, 0.2, 0)
 textLabel.Position = UDim2.new(0, 0, 0.4, 0)
-textLabel.BackgroundTransparency = 1
-textLabel.Text = "pls subscribe to t.me/psfhub!loading... "
+textLabel.BackgroundTransparency = 0.5
+textLabel.Text = "loading... "
 textLabel.TextColor3 = Color3.new(1, 1, 1)
 textLabel.TextScaled = true
 textLabel.Font = Enum.Font.GothamBold
