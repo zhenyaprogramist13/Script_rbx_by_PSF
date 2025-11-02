@@ -27,7 +27,7 @@ textLabel.Parent = screenGui
 screenGui.Parent = playerGui
 
 --посхалко ыы 1489
-wait(4)
+wait(2)
 screenGui:Destroy()
 -- PSF Hub for Executors
 local Players = game:GetService("Players")
