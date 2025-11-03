@@ -1214,3 +1214,49 @@ print("⚡ Ultra Fling Executor v3.6 loaded!")
 print("🎯 Features: Improved anti-fling + Text animation + No collision mode!")
 print("🛡️ Anti-Fling now allows players to pass through you!")
 print("📝 Title text moves when minimizing!")
+-- 🌟 ПЕРЕМЕЩЕНИЕ ОКНА ПАЛЬЦЕМ С ПЛАВНОСТЬЮ 🌟
+
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+
+local dragging = false
+local dragStart
+local startPos
+
+-- Функция плавного перемещения
+local function smoothMove(input)
+	local delta = input.Position - dragStart
+	local newPos = UDim2.new(
+		startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y
+	)
+	
+	TweenService:Create(
+		MainFrame,
+		TweenInfo.new(0.08, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+		{Position = newPos}
+	):Play()
+end
+
+-- Начало касания
+TitleFrame.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = MainFrame.Position
+	end
+end)
+
+-- Движение пальцем
+TitleFrame.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.Touch then
+		smoothMove(input)
+	end
+end)
+
+-- Отпускание пальца
+UserInputService.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch then
+		dragging = false
+	end
+end)
